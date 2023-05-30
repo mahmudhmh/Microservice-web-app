@@ -1,0 +1,736 @@
+{
+	"info": {
+		"_postman_id": "6f320ad8-502c-4282-8b2a-3abf2e139459",
+		"name": "shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21180724"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer afafdasfdfa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" :\"KhaliidHelaliii1\",\r\n    \"email\" : \"123456789\",\r\n    \"password\" : \"123\",\r\n    \"isAdmin\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer helalii441618+652626--",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"KhaliidHelaliii\",\r\n    \"email\" : \"1234567\",\r\n    \"password\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/users/find/646ca5dbd5d67252eb8116f4",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"users",
+						"find",
+						"646ca5dbd5d67252eb8116f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user stats",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/users/stats",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"users",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"updateusertest\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/users/646ca5dbd5d67252eb8116f4",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"users",
+						"646ca5dbd5d67252eb8116f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMGZlMzRmZjE2NTE5ODRjYTgwYjViOCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MTk4NjUxMiwiZXhwIjoxNjYyNTkxMzEyfQ.XresraJ26uQRNiuFPsJgs7g-02pxKEg-wW9Lxw19JXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/users/630fdfb74ca82dabe5cd84d0",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"users",
+						"630fdfb74ca82dabe5cd84d0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" :\"Lemon Juice\",\r\n    \"desc\" : \"Slices and sugar available\",\r\n    \"img\" :\"test\",\r\n    \"categories\" : [\"greek\"],\r\n    \"size\":\"m\",\r\n    \"color\":\"no\" ,\r\n    \"price\":100\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update products",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"desc\" : \"Lemon Juice updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/products/646ca825d5d67252eb8116fe",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products",
+						"646ca825d5d67252eb8116fe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/products/find/646ca825d5d67252eb8116fe",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products",
+						"find",
+						"646ca825d5d67252eb8116fe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/products/",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete products",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/products/646ca825d5d67252eb8116fe",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products",
+						"646ca825d5d67252eb8116fe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add orders",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"646ca5dbd5d67252eb8116f4\",\r\n    \"products\":[{\r\n        \"productId\":\"62944b6d224cf89fd83c1d88\",\r\n        \"quantity\" :2\r\n    },{\r\n        \"productId\":\"62944be299f6136dea29cc7c\",\r\n        \"quantity\":10\r\n    }\r\n    \r\n    ],\r\n    \"amount\":100,\r\n    \"address\":\"The Office Celoptra\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update orders",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"address\":\"The Office Celoptra Updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/orders/646caa80bc636ac86c26cfc2",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"orders",
+						"646caa80bc636ac86c26cfc2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete orders",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/orders/630ff3757e8b3de0154a582a",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"orders",
+						"630ff3757e8b3de0154a582a"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/orders/find/646ca5dbd5d67252eb8116f4",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"orders",
+						"find",
+						"646ca5dbd5d67252eb8116f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "income orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"629284eaf93fd8502c1e3f84\",\r\n    \"products\":[{\r\n        \"productId\":\"62933fcba989edb01c823044\",\r\n        \"quantity\" :2\r\n    },{\r\n        \"productId\":\"62933f5fa989edb01c823042\",\r\n        \"quantity\":1\r\n    }\r\n    \r\n    ],\r\n    \"amount\":50,\r\n    \"address\":\"khaleel hamada\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/orders/income",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"orders",
+						"income"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search by title product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/products/?title=pizza",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "pizza"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/products?price_max=100&price_min=80&category=greek",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "price_max",
+							"value": "100"
+						},
+						{
+							"key": "price_min",
+							"value": "80"
+						},
+						{
+							"key": "category",
+							"value": "greek"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"646ca5dbd5d67252eb8116f4\",\r\n    \"products\":[{\r\n        \"productId\":\"62944b6d224cf89fd83c1d88\",\r\n        \"quantity\" :2\r\n    },{\r\n        \"productId\":\"62944be299f6136dea29cc7c\",\r\n        \"quantity\":10\r\n    }\r\n    \r\n    ],\r\n    \"amount\":100,\r\n    \"address\":\"The Office Celoptra\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/carts",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:7000/api/carts/find/646ca5dbd5d67252eb8116f4",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"carts",
+						"find",
+						"646ca5dbd5d67252eb8116f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cart",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmNhNWRiZDVkNjcyNTJlYjgxMTZmNCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NDg0MTk3NywiZXhwIjoxNjg1NDQ2Nzc3fQ.xOmCMvJpZl6tzGlhA1kO9euk1Ell23mLGuX6qS3tSfo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\": 2,\r\n    \"product\": \"60aa5b34fdea9d42f4e94f10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7000/api/carts/6470dda65d28545c523652dd",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"carts",
+						"6470dda65d28545c523652dd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
