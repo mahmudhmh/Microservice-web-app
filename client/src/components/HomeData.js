@@ -3,11 +3,14 @@ import Modal from "react-modal";
 import ReactStars from "react-rating-stars-component";
 import Navbar from "./Navbar";
 import "./Home.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Hero = () => {
-  const [meals, setMeals] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [Workspaces, setWorkspaces] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedMeal, setSelectedMeal] = useState(null);
+  const [selectedWorkspace, setSelectedWorkspace] = useState(null);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
@@ -21,34 +24,34 @@ const Hero = () => {
 
   const addToCart = () => {
     setCartCount(cartCount + 1);
-    setCheckoutItems([...checkoutItems, selectedMeal]);
-    setCheckoutPrice(checkoutPrice + selectedMeal.price);
+    setCheckoutItems([...checkoutItems, selectedWorkspace]);
+    setCheckoutPrice(checkoutPrice + selectedWorkspace.price);
   };
 
   useEffect(() => {
     fetch("http://localhost:7000/api/products/")
       .then((response) => response.json())
-      .then((data) => setMeals(data))
+      .then((data) => setWorkspaces(data))
       .catch((error) => console.log(error));
   }, []);
 
-  const filteredMeals = meals.filter((meal) =>
-    meal.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredWorkspaces = Workspaces.filter((Workspace) =>
+    Workspace.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const renderData = filteredMeals.map((meal) => (
-    <div className="card col-md-4" key={meal._id}>
-      <img src={meal.img} className="w-100" alt="..." />
+  const renderData = filteredWorkspaces.map((Workspace) => (
+    <div className="card col-md-4" key={Workspace._id}>
+      <img src={Workspace.img} className="w-100" alt="..." />
       <div className="card-body">
-        <h5 className="card-title text-capitalize">{meal.title}</h5>
-        <p className="card-text">{meal.description}</p>
+        <h5 className="card-title text-capitalize">{Workspace.title}</h5>
+        <p className="card-text">{Workspace.description}</p>
         <div>
           <ReactStars />
-          <span>{meal.reviews} reviews</span>
+          <span>{Workspace.reviews} reviews</span>
           <br />
           <button
             className="details-btn"
-            onClick={() => openDetailsModal(meal)}
+            onClick={() => openDetailsModal(Workspace)}
           >
             Details
           </button>
@@ -60,17 +63,17 @@ const Hero = () => {
   const fetchProductDetails = (_id) => {
     fetch(`http://localhost:7000/api/products/${_id}`)
       .then((response) => response.json())
-      .then((data) => setSelectedMeal(data))
+      .then((data) => setSelectedWorkspace(data))
       .catch((error) => console.log(error));
   };
 
-  const openDetailsModal = (meal) => {
-    fetchProductDetails(meal._id);
+  const openDetailsModal = (Workspace) => {
+    fetchProductDetails(Workspace._id);
     setIsDetailsModalOpen(true);
   };
 
   const closeDetailsModal = () => {
-    setSelectedMeal(null);
+    setSelectedWorkspace(null);
     setIsDetailsModalOpen(false);
   };
 
@@ -131,7 +134,7 @@ const Hero = () => {
                     <p>
                       Co-working spaces often provide a shared kitchen and
                       dining area where members can prepare and enjoy their
-                      meals.
+                      Workspaces.
                     </p>
                   </div>
                 </div>
@@ -200,10 +203,10 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="meals">
+          <div className="Workspaces">
             <div className="row">
               <div className="col-md-10 d-flex justify-content-between">
-                <h3 className="text-capitalize">Our Workspaces</h3>
+                <h3 className="workspaces-txt">Our Workspaces</h3>
                 <input
                   type="text"
                   className="form-control w-50"
@@ -227,12 +230,25 @@ const Hero = () => {
         className="modal"
         overlayClassName="modal-overlay"
       >
-        {selectedMeal && (
+        {selectedWorkspace && (
           <div>
-            <img src={selectedMeal.img} alt={selectedMeal.title} />
-            <h2>Workspace Name : {selectedMeal.title}</h2>
-            <p>Description : {selectedMeal.desc}</p>
-            <p>Category: {selectedMeal.categories}</p>
+            <img src={selectedWorkspace.img} alt={selectedWorkspace.title} />
+            <DatePicker
+              selected={selectedDate}
+              className="Date-picker-data"
+              onChange={(date) => setSelectedDate(date)}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              dateFormat="MMMM d, yyyy h:mm aa"
+              placeholderText="Select date and time"
+            />
+            <h2>Workspace Name: {selectedWorkspace.title}</h2>
+            <p>Description: {selectedWorkspace.desc}</p>
+            <p>Category: {selectedWorkspace.categories}</p>
+            <p>Price: {selectedWorkspace.price}</p>
+            <p>Cart Count: {cartCount}</p>
+
             <button onClick={addToCart}>Book</button>
             <button onClick={openCheckoutModal}>Checkout</button>
             <button onClick={closeDetailsModal}>Close</button>

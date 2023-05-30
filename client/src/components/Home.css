@@ -9,6 +9,24 @@ body {
   width: 1000px;
   border-radius: 5px;
 }
+.modal .DatePicker {
+  width: 200px;
+  z-index: 1;
+  background-color: transparent;
+}
+.workspaces-txt {
+  color: #fff;
+}
+.Date-picker-data {
+  width: 200px;
+}
+.Date-picker-data button {
+  width: 200px;
+  background-color: #fff;
+}
+.react-datepicker__navigation .react-datepicker__navigation--previous {
+  width: 10px;
+}
 .service-item {
   margin-top: 50px;
   margin-bottom: 60px;

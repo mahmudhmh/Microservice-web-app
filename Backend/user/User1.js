@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
-const dotEnv  = require("dotenv");
+const dotEnv = require("dotenv");
 const express = require("express");
 const app = express();
 dotEnv.config();
 
+// Create a connection to the MongoDB database using the provided MONGO_URL
+var conn = mongoose.createConnection(
+  process.env.MONGO_URL,
+  console.log("USER DB DONE")
+);
 
-var conn  = mongoose.createConnection(process.env.MONGO_URL, console.log("USER DB DONE"));
-
+// Define the user schema
 const UserSchema = new mongoose.Schema(
   {
     username: { type: String, required: true, unique: true },
@@ -20,9 +24,8 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// Export the user model based on the schema
 module.exports = conn.model("User", UserSchema);
-
-
 
 // mongoose.connect('mongodb://127.0.0.1:27017/users',
 // {
@@ -34,13 +37,12 @@ module.exports = conn.model("User", UserSchema);
 //   console.log('something wrong',error);
 // })
 
-
 // mongoose
-//     .connect(process.env.MONGO_URL)
-//     .then(() => console.log("DBConnection USER Successfull!"))
-//     .catch((err) =>{
-//         console.log(err);  //DB CONNECT>>.ENV
-//     });
+//   .connect(process.env.MONGO_URL)
+//   .then(() => console.log("DBConnection USER Successful!"))
+//   .catch((err) => {
+//     console.log(err); //DB CONNECT>>.ENV
+//   });
 
 // app.listen(PORT, () => {
 //   console.log(listening to port ${PORT1});
@@ -55,4 +57,3 @@ module.exports = conn.model("User", UserSchema);
 // });
 
 // listen(port: {[]}, hostname: string, backlog: number, callback?: () => void): Server
-

@@ -84,12 +84,13 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // SEARCH PRODUCTS BY TITLE
 router.get("/search", async (req, res) => {
   const qTitle = req.query.title;
 
   try {
-    const products =await Product.find({ title: qTitle });
+    const products = await Product.find({ title: qTitle });
     res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);

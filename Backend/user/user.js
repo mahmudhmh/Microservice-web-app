@@ -12,7 +12,7 @@ const {
 
 const router = require("express").Router();
 
-//UPDATE
+// UPDATE
 router.patch("/:id", async (req, res) => {
   if (req.body.password) {
     req.body.password = CryptoJS.AES.encrypt(
@@ -35,7 +35,7 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
-//DELETE
+// DELETE
 router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
   try {
     await User.findByIdAndDelete(req.params.id);
@@ -45,7 +45,7 @@ router.delete("/:id", verifyTokenAndAuthorization, async (req, res) => {
   }
 });
 
-//GET USER
+// GET USER
 router.get("/find/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -56,7 +56,7 @@ router.get("/find/:id", async (req, res) => {
   }
 });
 
-//GET ALL USER
+// GET ALL USERS
 router.get("/", verifyTokenAndAdmin, async (req, res) => {
   const query = req.query.new;
   try {
@@ -69,8 +69,7 @@ router.get("/", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-//GET USER STATS
-
+// GET USER STATS
 router.get("/stats", verifyTokenAndAdmin, async (req, res) => {
   const date = new Date();
   const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));

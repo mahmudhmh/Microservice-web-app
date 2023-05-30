@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState, useEffect } from "react";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaShoppingCart, FaUser, FaRegTimesCircle } from "react-icons/fa";
@@ -29,7 +30,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/Card">
+            <Link to="/About">
               <h1 className="header__optionLineTwo">About Us</h1>
             </Link>
           </li>
@@ -39,9 +40,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/Details">
+            <Link to="/CartPage">
               <h1 className="header__optionLineTwo">
-                <FaShoppingCart />
+                Cart <FaShoppingCart />
               </h1>
             </Link>
           </li>
@@ -62,6 +63,14 @@ const Navbar = () => {
               </Link>
             )}
           </li>
+          {/* <div style={{ height: "700px", width: "400px", zIndex: "1" }}>
+            <iframe
+              src={`https://ora.ai/embed/71f2f1e8-5662-4547-bf77-8911df6878e1`}
+              width="100%"
+              height="100%"
+              style={{ border: "0", borderRadius: "4px" }}
+            />
+          </div> */}
         </ul>
         <div className="hamburger" onClick={handleClick}>
           {click ? (

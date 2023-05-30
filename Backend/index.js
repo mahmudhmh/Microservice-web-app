@@ -2,31 +2,32 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const userRoute = require("./user/user");
-const authRoute = require("./API-gateway/auth");
-const productRoute = require("./product/product");
-const cartRoute = require("./cart/cart");
-const orderRoute = require("./order/order");
+const userRoute = require("./user/user"); // Importing user router
+const authRoute = require("./API-gateway/auth"); // Importing authentication router
+const productRoute = require("./product/product"); // Importing product router
+const cartRoute = require("./cart/cart"); // Importing cart router
+const orderRoute = require("./order/order"); // Importing order router
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
 
 // dotenv.config();
 // mongoose
-//     .connect(process.env.USER_MONGO_URL)
-//     .then(() => console.log("DBConnection Successfull!"))
-//     .catch((err) =>{
-//         console.log(err);  //DB CONNECT>>.ENV
-//     });
+//   .connect(process.env.USER_MONGO_URL)
+//   .then(() => console.log("DBConnection Successful!"))
+//   .catch((err) => {
+//     console.log(err); //DB CONNECT>>.ENV
+//   });
+
 app.use(cors());
 app.use(express.json());
-app.use("/api/auth", authRoute);
-app.use("/api/users", userRoute);
-app.use("/api/products", productRoute);
-app.use("/api/carts", cartRoute);
-app.use("/api/orders", orderRoute); //GIVING app point an api route
+app.use("/api/auth", authRoute); // Registering authentication router at '/api/auth' route
+app.use("/api/users", userRoute); // Registering user router at '/api/users' route
+app.use("/api/products", productRoute); // Registering product router at '/api/products' route
+app.use("/api/carts", cartRoute); // Registering cart router at '/api/carts' route
+app.use("/api/orders", orderRoute); // Registering order router at '/api/orders' route
 
 app.listen(process.env.PORT || 7000, () => {
-  console.log("Backend server is running index"); //USING EXISTING PORT OR 5000 BY DEFAULT
+  console.log("Backend server is running"); // Listening on the specified port or defaulting to 7000
 });
 
 app.get("/", (req, res) => {
